@@ -1,76 +1,44 @@
-note: for normal tailwind css steps
+| ***** Tailwind CSS version-4 installation guide step by step with Cli ***** |
 
-step 1: 
-index.html ki file ma terminal open kar ka( npm init -y ) likh kar enter karo 1 object ajaiga 
+Step 1: 
+index.html ki file create kar ka terminal open kar ka( npm init -y ) likh kar enter karo 1 object ajaiga terminal ma.
 
-step 2:
- ( npm install tailwindcss @tailwindcss/cli ) ya command terminal ma likh kar enter karo package-lock.json ki file or node_modules ka folder ajaiga 
+Step 2:
+ phir ya ( npm install tailwindcss @tailwindcss/cli ) command terminal ma likh kar enter karo package-lock.json ki file or node_modules ka folder ajaiga.
 
-step 3:
- 1 folder banana hai src ka name sa or us ma 1 input.css ki file banani hai or us ma ya paste karna hai jo bracket ma hai ( @import "tailwindcss"; )
+Step 3:
+ 1 folder banana hai src ka name sa or us ma 1 input.css ki file banani hai or us ma ya paste karna hai ( @import "tailwindcss"; ).
 
-step 4:
- terminal ma ya wala link paste karna hai jis sa aapka src folder ma auto output.css ki file banjaigi or wo har second khud hi update hoti raha gi
- (   npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch  )	
+Step 4:
+ Terminal ma ya line paste karna hai is sa wo aapki input file check karaga or auto output file create kar daiga jis ma tailwind css ka code hoga, or --watch sa 
+ updated code save karta rahaga.
+ (   npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch  )
 
-step 5:
-ab index.html ki file ma ya link lagana hai ( <link href="./src/output.css" rel="stylesheet" /> ) is ma Jahan aapki output.css ki file hai wahan ka link lagana hai agar aapna is file ka mutabiq tailwind install kia hai to is ko hi paste kar dain
+Step 5:
+ index.html ki file ma output.css ki file ko link karna hai ( <link href="./src/output.css" rel="stylesheet" /> )
 
-step 6:
-ab check karna ka lia ka tailwind kaam kar raha hai ( <h1 class="text-3xl font-bold underline bg-red-800">Hello world!</h1> ) ya line paste kar dain body ma or live server ki extension install kar ka right click kar ka open with live server kar lain
+Step 6:
+ ( <h1 class="text-3xl font-bold underline bg-red-800">Hello world!</h1> ) ya code paste karna hai is ka baad live server sa browser par open kar ka check karna hai
+ ka ya code run horaha hai ya nhi.
 
-step 7:
-aap jab bhi kuch add karainga to terminal ma har waqt ( done in 1ms ) aisa kuch likha aana chahia kion ka ya output file ko update karta raha ga,
-jab aap file band kar ka kholainga to ya stop hojaiga to sab sa pahla aap ko ya command terminal ma dobara run karni 
-paragi ( npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch ) taka ya dobara run hona start hojai, agar aap ya command yaad nhi kar sakta to asaan tarika ya hai ka aap ( package.json ) ki file ma jain or us ma  ya likha hoa hoga jo nicha bracket ma likha hai 
+Step 7:
+ ab apna code start kardain Tailwind CSS install hogai hai. last cheez ya hamasha note karna hai ka terminal ma ( done in 1ms ) is Tarah ki koi line likhi arah hai 
+ na ya code ko update kar rahi hai jo browser par show horaha hai agar ya is Tarah ki line nhi show horahi to ya watch wali pori command chalain terminal par 
+ (   npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch  )
 
-(  
+Step 8:
+ --watch wali command ko short karna ka lia ( package.json ) wali file open karka us ma ya line likhi ho hogi jo nicha hai is ko update kar ka us ka nich wali line likhni hai,
+
+default :
 "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }, 
-)   
-to aap isko update kar ka ya likh dain 
-( 
- "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
-  },
- )   is ma build wali line hum na add ki hai ab jab bhi aap file kholainga top aap ko ( npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch ) ya pori line likhna ki zaroorat nhi paragi balka aap simply ya likh sakta hain ( npm run build )  is sa wo khud hi is line ko run karda ka build ka zariya sa.
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
 
+updated:
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
 
+is ma build wali line add karni hai ab --watch wali pori line nhi likhni balka simply ( npm run build ) likhna hai is sa bhi yahi command run hogi.
 
-note: Agar error hoto ya tarika kaar hai
-
-step 1:
-apni index.html file ki terminal ma jao or next line ma jo likha hai wo likh kar enter karo 
-npm init -y  (is command ko likhna sa package .json file ajati hai or ya zaroori hai)
-
-warna aap usi folder ko open kar ka us par ya command run kardo ga to bhi ajaiga package.json or node_modules ka folder command ya hai  ( npm install tailwindcss @tailwindcss/cli )
-
-note: agar ya likhna ka baad koi error araha hai jaisa ya nicha bracket{} ma dia hoa hai to terminal ma ya likho or har new file banana ma ya masla asakta hai kionka ya aapka system ka power shell ki wajah sa hota hai nicha is() bracket ma solution likha hoa hai wo terminal ma likh kar enter kar do masla solve hojaiga.
-
-error: {
-npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see 
-about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
-At line:1 char:1
-+ npm init -y
-+ ~~~
-    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess
-}
-
-solution: (
-    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser    // is line ko likhna sa maasla solve hojaiga
-    Get-ExecutionPolicy     // is sa check kar sakta hain optional hai RemoteSigned likha ghoa ajaiga  
-    ab dobara  npm init -y  likh kar enter kar dain
-)
-
-step 2: 
-1 folder banana hai src ka name sa or us ma 1 input.css ki file banani hai or us ma ya paste karna hai jo bracket ma hai (
-    @import "tailwindcss";
-)
-
-step 3:
-terminal ma ya wala link paste karna hai jis sa aapka src folder ma auto output.css ki file banjaigi or wo har second khud hi update hoti raha gi ( 
-    npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
- )	
