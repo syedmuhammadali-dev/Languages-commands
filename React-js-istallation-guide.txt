@@ -1,4 +1,4 @@
-| ***** React js cersion-19 installation guide step by step ***** |
+| ***** React js version-19 installation guide step by step ***** |
 
 step-1:
 open this ( link https://vite.dev/guide/ ) this is the official react-js with vite website.
