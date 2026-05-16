@@ -33,3 +33,25 @@ Example: git clone https://github.com/Shahzadaahmed/React-Native-Basics
 
 Note: Agr ap kisi repo m kam kr rahy ho or apki kisi partner ne changes ki hen or apne pull lena hy then:
 git pull origin master/brance-name
+
+Note: folder ma repo ka naam maloom karna ka lia command:
+git remote -v
+
+Note: Agar name change kia hai commits ka to origin change karna ka baad ya command chalani hai:
+git push --force --all
+git push --force --tags
+
+Note: with out rewrite author name push all code:
+git push --all origin
+git push --tags
+
+Note: Total commit check karna ka lia:
+git rev-list --count --all
+
+Note: dubious ownership issue khatam karna ka lia:
+git config --global --add safe.directory "us folder ki directory"
+
+
+
+
+
